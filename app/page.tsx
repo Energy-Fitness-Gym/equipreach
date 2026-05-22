@@ -60,31 +60,41 @@ export default function Home() {
           The equipment people often need quickly.
         </h2>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {equipment.map((item) => {
-  const href =
-    item === "Stairlifts"
-      ? "/stairlifts"
-      : item === "Ramps"
-      ? "/ramps"
-      : "/hospital-beds";
+<div className="mt-10 grid gap-6 md:grid-cols-3">
+  {equipment.map((item) => {
+    const href =
+      item === "Stairlifts"
+        ? "/stairlifts"
+        : item === "Ramps"
+        ? "/ramps"
+        : "/hospital-beds";
 
-  return (
-    <a
-      key={item}
-      href={href}
-      className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-xl"
-    >
-      <h3 className="text-2xl font-semibold">{item}</h3>
+    return (
+      <a
+        key={item}
+        href={href}
+        className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+      >
+        <h3 className="text-2xl font-semibold">{item}</h3>
 
-      <p className="mt-3 leading-relaxed text-slate-600">
-        Learn coverage basics, installation needs, local providers, and
-        alternatives if insurance does not cover it.
-      </p>
-    </a>
-  );
-})}
-        </div>
+        <p className="mt-3 leading-relaxed text-slate-600">
+          Learn coverage basics, installation needs, local providers, and
+          alternatives if insurance does not cover it.
+        </p>
+      </a>
+    );
+  })}
+</div>
+
+<div className="mt-6 flex justify-center">
+  <a
+    href="/equipment"
+    className="inline-flex rounded-full bg-slate-900 px-7 py-3 font-semibold text-white transition hover:bg-slate-800"
+  >
+    Explore all equipment
+  </a>
+</div>
+
       </section>
       <section id="how-it-works" className="mx-auto max-w-6xl px-6 pb-24">
   <div className="rounded-[2rem] bg-white p-8 shadow-sm ring-1 ring-black/5 md:p-12">
@@ -180,7 +190,7 @@ export default function Home() {
     </div>
 
     <div className="flex flex-col gap-3 text-sm text-slate-600">
-      <a href="#equipment" className="transition hover:text-slate-900">
+      <a href="/equipment" className="transition hover:text-slate-900">
         Equipment
       </a>
 
