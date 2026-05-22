@@ -12,9 +12,12 @@ export async function getEquipment() {
     }
   );
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch Airtable equipment");
-  }
+if (!response.ok) {
+  const errorText = await response.text();
+  throw new Error(
+    `Failed to fetch Airtable equipment: ${response.status} ${errorText}`
+  );
+}
 
   const data = await response.json();
 
