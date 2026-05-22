@@ -91,7 +91,7 @@ export default function Home() {
     href="/equipment"
     className="inline-flex rounded-full bg-slate-900 px-7 py-3 font-semibold text-white transition hover:bg-slate-800"
   >
-    Explore all equipment.
+    Explore all equipment
   </a>
 </div>
 
