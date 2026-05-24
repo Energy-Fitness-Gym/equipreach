@@ -6,17 +6,7 @@ export default function Home() {
       <section className="relative min-h-screen overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,#d7c0a8,transparent_35%),radial-gradient(circle_at_80%_30%,#7b9a91,transparent_35%),linear-gradient(135deg,#4b3f36,#1f2933)]" />
         <div className="absolute inset-0 bg-black/35" />
-        <nav className="relative z-10 mx-auto mt-6 flex max-w-6xl items-center justify-between rounded-full bg-white/90 px-6 py-4 shadow-lg backdrop-blur">
-          <span className="font-bold tracking-wide text-slate-900">
-            EquipReach
-          </span>
-
-          <div className="hidden gap-6 text-sm font-medium text-slate-700 md:flex">
-            <a href="#equipment">Equipment</a>
-            <a href="#how-it-works">How it works</a>
-            <a href="#request-help">Request help</a>
-          </div>
-        </nav>
+        
 
         <div className="relative z-10 mx-auto flex min-h-[calc(100vh-96px)] max-w-4xl flex-col items-center justify-center px-6 text-center text-white">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-white/80">
@@ -176,38 +166,6 @@ export default function Home() {
   </div>
 </section>
 
-<footer className="border-t border-black/5 bg-[#efe7dc]">
-  <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-12 md:flex-row md:items-start md:justify-between">
-    <div className="max-w-md">
-      <h3 className="text-2xl font-bold text-slate-900">
-        EquipReach
-      </h3>
-
-      <p className="mt-4 leading-relaxed text-slate-600">
-        Helping families, caregivers, and clinicians better navigate home
-        accessibility equipment, coverage realities, and provider options.
-      </p>
-    </div>
-
-    <div className="flex flex-col gap-3 text-sm text-slate-600">
-      <a href="/equipment" className="transition hover:text-slate-900">
-        Equipment
-      </a>
-
-      <a href="#how-it-works" className="transition hover:text-slate-900">
-        How it works
-      </a>
-
-      <a href="#request-help" className="transition hover:text-slate-900">
-        Coming soon
-      </a>
-    </div>
-  </div>
-
-  <div className="border-t border-black/5 px-6 py-6 text-center text-sm text-slate-500">
-    © 2026 EquipReach. Built to simplify accessibility guidance.
-  </div>
-</footer>
     </main>
   );
 }
