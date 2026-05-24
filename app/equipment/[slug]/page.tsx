@@ -65,12 +65,7 @@ export default async function EquipmentDetailPage({
         <div className="absolute inset-0 bg-black/35" />
 
         <div className="relative z-10 mx-auto max-w-5xl">
-          <Link
-            href="/equipment"
-            className="inline-flex rounded-full bg-white/10 px-5 py-2 text-sm font-medium text-white backdrop-blur transition hover:bg-white/20"
-          >
-            ← Back to equipment
-          </Link>
+
 
           <div className="mt-16 max-w-3xl text-white">
             {category && (
