@@ -63,11 +63,11 @@ export default function Home() {
 <div className="mt-10 grid gap-6 md:grid-cols-3">
   {equipment.map((item) => {
     const href =
-      item === "Stairlifts"
-        ? "/stairlifts"
-        : item === "Ramps"
-        ? "/ramps"
-        : "/hospital-beds";
+  item === "Stairlifts"
+    ? "/equipment/stairlift"
+    : item === "Ramps"
+    ? "/equipment/ramp"
+    : "/equipment/hospital-bed";
 
     return (
       <a

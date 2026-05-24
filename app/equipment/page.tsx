@@ -1,5 +1,6 @@
 import { getEquipment } from "@/lib/airtable";
 import Link from "next/link";
+import EquipmentDirectory from "./components/equipment-directory";
 
 export default async function EquipmentPage() {
   const equipment = await getEquipment();
@@ -62,71 +63,8 @@ export default async function EquipmentPage() {
     </div>
   </div>
 
-  <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-    {equipment.map(
-      (item: { id: string; fields: Record<string, any> }) => {
-        const name = item.fields["Equipment name"] || "Unnamed equipment";
-        const category = item.fields.Category;
-        const coverage =
-          item.fields["Insurance Coverage Likelihood"] ||
-          item.fields["Coverage Likelihood"];
-        const coverageNotes = item.fields["Coverage Notes"];
-        const installationRequired = item.fields["Installation Required"];
-        const rentalAvailable = item.fields["Rental Available"];
-        const alternatives = item.fields["Alternatives if Insurance Denies"];
+<EquipmentDirectory equipment={equipment} />
 
-        return (
-          <div
-            key={item.id}
-            className="flex h-full flex-col rounded-3xl bg-white p-7 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-xl"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                {category && (
-                  <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">
-                    {category}
-                  </p>
-                )}
-
-                <h3 className="mt-2 text-2xl font-bold">{name}</h3>
-              </div>
-
-              {coverage && (
-                <span className="rounded-full bg-[#efe7dc] px-3 py-1 text-xs font-semibold text-slate-700">
-                  {coverage}
-                </span>
-              )}
-            </div>
-
-            <p className="mt-5 line-clamp-4 leading-relaxed text-slate-600">
-              {coverageNotes ||
-                "Coverage guidance and next steps will be added soon."}
-            </p>
-
-            <div className="mt-6 flex flex-wrap gap-2">
-              {installationRequired && (
-                <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">
-                  Installation needed
-                </span>
-              )}
-
-              {rentalAvailable && (
-                <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">
-                  Rental available
-                </span>
-              )}
-
-              {alternatives && (
-                <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">
-                  Alternatives listed
-                </span>
-              )}
-            </div>
-          </div>
-        );
-      }
-    )}
-  </div>
 </section>
     </main>
   );

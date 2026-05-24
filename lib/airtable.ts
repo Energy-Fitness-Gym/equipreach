@@ -23,3 +23,22 @@ if (!response.ok) {
 
   return data.records;
 }
+
+export function createSlug(name: string) {
+  return name
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export async function getEquipmentBySlug(slug: string) {
+  const equipment = await getEquipment();
+
+  return equipment.find((item: { fields: Record<string, any> }) => {
+    const name = item.fields["Equipment name"] || "";
+
+    return createSlug(name) === slug;
+  });
+}
